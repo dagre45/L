@@ -1,0 +1,23 @@
+# =====================================================
+#  server.properties — relevant keys only
+#  Path: server.properties (repo root of your server)
+#  Merge these into the auto-generated file; don't overwrite the whole thing
+#  (it also contains your world seed, port, RCON secrets, etc).
+# =====================================================
+
+pvp=true
+difficulty=hard
+hardcore=false
+spawn-protection=0
+# ^ 0 because WorldGuard's "spawn" region (see spawn-region-setup.txt) is the
+#   real protection — vanilla spawn-protection is a blunt square and fights
+#   with WorldGuard/GriefPrevention in confusing ways.
+
+enforce-whitelist=false
+white-list=false
+online-mode=true
+enable-command-block=false
+max-players=100
+view-distance=10
+simulation-distance=8
+allow-flight=false

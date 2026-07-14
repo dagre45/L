@@ -1,0 +1,35 @@
+# =====================================================
+#  CrazyCrates (free, open source) — crate registry
+#  Path: plugins/CrazyCrates/config.yml
+#  Plugin: https://github.com/Crazy-Crew/CrazyCrates (100% free, no premium tier)
+# =====================================================
+
+Settings:
+  Locale: en_US
+  Command-Aliases: [crate, crates]
+  Broadcast-Rewards: true
+
+Crates:
+  HeartCrate:
+    Crate: "plugins/CrazyCrates/Crates/heart_crate.yml"
+    Physical-Key:
+      Enabled: true
+      Item: TRIPWIRE_HOOK
+      CustomModelData: 100010
+      Name: "&c&lHeart Crate Key"
+  GearCrate:
+    Crate: "plugins/CrazyCrates/Crates/gear_crate.yml"
+    Physical-Key:
+      Enabled: true
+      Item: TRIPWIRE_HOOK
+      CustomModelData: 100011
+      Name: "&b&lGear Crate Key"
+
+# How players get keys (pick what fits your server — all free):
+#  1. Kill-milestone rewards: pair with the "Heart Bounty" or "Elimination
+#     Killstreaks" upsell addons (docs/UPSELL_ADDONS.md), which can run
+#     `crazycrates give key <player> HeartCrate 1` on milestones.
+#  2. Voting: install the free "VotingPlugin" and add a CrazyCrates key
+#     reward to its rewards.yml.
+#  3. Shop purchase: see plugins/EconomyShopGUI/shops/keys.yml.
+#  4. Manual/event: `/crazycrates give key <player> <crate> <amount>`

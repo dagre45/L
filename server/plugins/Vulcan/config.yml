@@ -1,0 +1,65 @@
+# =====================================================
+#  Vulcan (free, open source) — anti-cheat baseline
+#  Path: plugins/Vulcan/config.yml
+#  Plugin: https://github.com/lukflug/Vulcan (or the maintained SpigotMC fork
+#  — search "Vulcan Anticheat"; MIT-licensed, no premium tier). Alternative:
+#  Grim Anticheat (also free) — https://github.com/GrimAnticheat/Grim
+#
+#  Anticheat thresholds are inherently server-specific (hosting latency,
+#  playerbase, TPS headroom). These are sane, slightly lenient starting
+#  points for a PvP-heavy Lifesteal SMP — tune via /vulcan after a few days
+#  of real player data rather than trusting any preset blindly.
+# =====================================================
+
+general:
+  prefix: "&8[&c❤Vulcan&8]&r"
+  alerts-enabled: true
+  alerts-permission: "vulcan.alerts"
+  debug-mode: false
+  max-violation-history: 20
+
+punishments:
+  enabled: true
+  # PvP-focused checks get instant-kick thresholds; movement checks are
+  # command-webhook-alert-first to avoid false-positives on high-ping killers
+  # stealing a heart (a false ban here is a very costly false positive).
+  default-punishment:
+    - "vl > 20: kick %player% &cSuspicious activity detected (movement)."
+    - "vl > 40: ban %player% 1d &cCombat/movement anomalies detected."
+
+checks:
+  killaura:
+    enabled: true
+    punishable: true
+  reach:
+    enabled: true
+    punishable: true
+    max-reach: 3.02          # slight buffer over vanilla 3.0 for latency
+  autoclicker:
+    enabled: true
+    punishable: false        # alert-only; CPS alone is too false-positive-prone for a ban
+    max-cps: 20
+  fastbow:
+    enabled: true
+    punishable: true
+  speed:
+    enabled: true
+    punishable: true
+    max-horizontal-speed-multiplier: 1.1
+  fly:
+    enabled: true
+    punishable: true
+  nofall:
+    enabled: true
+    punishable: true
+  scaffold:
+    enabled: true
+    punishable: true
+  timer:
+    enabled: true
+    punishable: true
+
+exemptions:
+  creative-mode: true
+  vanished-players: true
+  bypass-permission: "vulcan.bypass"   # give ONLY to staff who need to fly/noclip for moderation

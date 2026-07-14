@@ -1,0 +1,39 @@
+# =====================================================
+#  Spawn safe-zone — one-time setup commands
+#  Run these as an OP standing at your build spawn, after WorldEdit +
+#  WorldGuard are installed. Adjust the //expand distances to match your
+#  spawn platform size.
+# =====================================================
+
+# 1. Select a cuboid covering the whole spawn platform/building:
+//pos1
+//pos2
+# (or stand at spawn and run: //expand 60 up, //expand 60 down, //expand 100 vert
+#  then //contract as needed — easiest is //wand and click two corners)
+
+# 2. Turn the selection into a WorldGuard region:
+/rg define spawn
+
+# 3. Lock it down — no PvP, no hostile mobs, no fall/void damage, no claiming
+#    over it with GriefPrevention:
+/rg flag spawn pvp deny
+/rg flag spawn mob-spawning deny
+/rg flag spawn mob-damage deny
+/rg flag spawn fall-damage deny
+/rg flag spawn fire-spread deny
+/rg flag spawn tnt deny
+/rg flag spawn creeper-explosion deny
+/rg flag spawn block-break deny
+/rg flag spawn block-place deny
+/rg flag spawn entry allow
+/rg flag spawn greeting "&c&l❤ Welcome to the Lifesteal SMP! &7PvP is disabled here."
+/rg flag spawn farewell "&7PvP is now &c&lON&7. Watch your hearts!"
+
+# 4. Set region priority above player claims (already set via
+#    plugins/WorldGuard/config.yml default-priority, but double-check):
+/rg priority spawn 10
+
+# 5. GriefPrevention: prevent players from claiming inside the WorldGuard
+#    spawn region by simply not granting claim blocks there — GriefPrevention
+#    claims and WorldGuard regions can coexist, but since spawn is fully
+#    flag-locked (no block-break/place), there's nothing to claim anyway.

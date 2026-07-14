@@ -1,0 +1,45 @@
+# =====================================================
+#  EconomyShopGUI — Hearts & Revives category
+#  Path: plugins/EconomyShopGUI/shops/hearts.yml
+#
+#  Pricing philosophy: hearts should mostly be earned by PvP/crates, not
+#  bought outright — the shop price is a "catch-up" sink for grinders, priced
+#  well above what an active player earns per hour so it never trivializes
+#  the PvP risk of stealing hearts. Sell price is ~1/3 of buy to discourage
+#  buy-sell flipping and to keep the currency sink net-positive.
+#
+#  Reference economy assumption: EssentialsX default starting balance $500,
+#  a focused hour of ore/farm grinding nets roughly $2,000-$3,000 (see
+#  shops/blocks.yml, shops/food.yml).
+# =====================================================
+
+items:
+  1:
+    material: NETHER_STAR
+    customModelData: 100001
+    displayName: "&c&l❤ Heart Fragment"
+    description:
+      - "&7Right-click to consume for +1 heart."
+      - "&7Capped at your server's max hearts."
+      - ""
+      - "&e⚠ Expensive on purpose — hearts are"
+      - "&emeant to be earned by PvP or crates."
+    amount: 1
+    buyPrice: 12000.0
+    sellPrice: 4000.0
+    maxBuyPerTransaction: 5   # prevents one purchase from insta-maxing a player's hearts
+
+  2:
+    material: BEACON
+    customModelData: 100002
+    displayName: "&b&l✦ Revive Beacon"
+    description:
+      - "&7Use &f/revive <player>&7 to bring back"
+      - "&7an eliminated player."
+      - ""
+      - "&e⚠ Endgame item — priced as a last resort,"
+      - "&enot the primary way to get one (see crates)."
+    amount: 1
+    buyPrice: 40000.0
+    sellPrice: 15000.0
+    maxBuyPerTransaction: 1

@@ -1,0 +1,20 @@
+# =====================================================
+#  EssentialsX — partial config (economy backend for Vault)
+#  Path: plugins/Essentials/config.yml
+#  NOTE: EssentialsX generates a ~1000-line default config.yml on first boot.
+#  Do NOT paste this whole file over it — instead open the generated file and
+#  change just these keys, then restart. Only the economy/currency and a few
+#  QoL toggles are shown; everything else can stay default.
+# =====================================================
+
+currency-symbol: "$"
+starting-balance: 500
+economy-log-enabled: true
+
+# Recommended QoL for a Lifesteal SMP (kill economy + PvP focus):
+back-on-death: true          # /back lets a killer's victim return once revived
+disable-item-pickup-while-eliminated: false   # LifestealCore handles elimination separately
+respawn-listener-priority: highest
+
+# Keep spawn/homes/warps/tpa enabled (defaults) — buyers rely on these for the
+# claim-based SMP loop (see docs/INSTALL.md World & Spawn Setup).

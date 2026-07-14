@@ -1,0 +1,38 @@
+# =====================================================
+#  Paper built-in anti-xray — no plugin needed
+#  Path: config/paper-world-defaults.yml (Paper 1.19+, applies to all worlds
+#  unless overridden per-world in config/<world>/paper-world.yml)
+#  Docs: https://docs.papermc.io/paper/anti-xray
+#  Merge this "anticheat" block into the generated file — don't overwrite it.
+# =====================================================
+
+anticheat:
+  anti-xray:
+    enabled: true
+    engine-mode: 1          # 1 = obfuscate ore blocks below the surface; fast, no client mods needed
+    hidden-blocks:
+      - copper_ore
+      - deepslate_copper_ore
+      - gold_ore
+      - deepslate_gold_ore
+      - iron_ore
+      - deepslate_iron_ore
+      - diamond_ore
+      - deepslate_diamond_ore
+      - redstone_ore
+      - deepslate_redstone_ore
+      - lapis_ore
+      - deepslate_lapis_ore
+      - coal_ore
+      - deepslate_coal_ore
+      - nether_gold_ore
+      - nether_quartz_ore
+      - ancient_debris
+    lava-obscures: false
+    max-block-height: 64
+    replacement-blocks:
+      - stone
+      - deepslate
+      - netherrack
+    update-radius: 2
+    use-permission: false   # applies to everyone, including staff (use /xray bypass permission only for trusted admins if needed)

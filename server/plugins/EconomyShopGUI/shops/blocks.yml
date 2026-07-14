@@ -1,0 +1,37 @@
+# Path: plugins/EconomyShopGUI/shops/blocks.yml
+items:
+  1:
+    material: COBBLESTONE
+    amount: 1
+    buyPrice: 2.0
+    sellPrice: 0.5
+  2:
+    material: IRON_INGOT
+    amount: 1
+    buyPrice: 25.0
+    sellPrice: 12.0
+  3:
+    material: GOLD_INGOT
+    amount: 1
+    buyPrice: 40.0
+    sellPrice: 20.0
+  4:
+    material: DIAMOND
+    amount: 1
+    buyPrice: 250.0
+    sellPrice: 140.0
+  5:
+    material: EMERALD
+    amount: 1
+    buyPrice: 180.0
+    sellPrice: 100.0
+  6:
+    material: NETHERITE_SCRAP
+    amount: 1
+    buyPrice: 1800.0
+    sellPrice: 1100.0
+  7:
+    material: ANCIENT_DEBRIS
+    amount: 1
+    buyPrice: -1     # not purchasable, mining-only
+    sellPrice: 1400.0

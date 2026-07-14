@@ -1,0 +1,24 @@
+# =====================================================
+#  WorldGuard (free) — partial config
+#  Path: plugins/WorldGuard/config.yml
+#  Handles: the static spawn safe-zone region (no PvP, no mob spawning,
+#  no fall/void damage) via a manually-defined region — see
+#  server/config/spawn-region-setup.txt for the commands to create it.
+# =====================================================
+
+regions:
+  # Highest priority so "spawn" always wins over any overlapping claim.
+  default-priority: 0
+  use-player-teleports: true
+
+# Global PvP stays ON everywhere except the spawn region flag below —
+# the whole point of a Lifesteal SMP is world-wide PvP risk.
+pvp:
+  default-value: true
+  blacklisted-vehicles-block-fire-spread: false
+
+# Combat log / logout blocking is handled natively by LifestealCore's
+# combat-log module (plugins/LifestealCore/config.yml -> combat-log), so no
+# CombatLogX (or WorldGuard's own combat flags) is needed here — one fewer
+# plugin, and it's the only implementation that correctly steals a heart on
+# punishment.

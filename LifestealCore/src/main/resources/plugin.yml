@@ -1,0 +1,40 @@
+name: LifestealCore
+version: '${project.version}'
+main: com.dagre45.lifestealcore.LifestealCore
+api-version: '1.21'
+author: dagre45
+description: Core heart-mechanic engine for the Lifesteal SMP pack — hearts, elimination bans, heart items, revive beacons.
+softdepend: [PlaceholderAPI, Vault, LuckPerms]
+
+commands:
+  hearts:
+    description: Show your (or another player's) current heart count.
+    usage: /hearts [player]
+  withdrawheart:
+    description: Convert one of your hearts into a tradeable Heart Fragment item.
+    usage: /withdrawheart
+  revive:
+    description: Revive an eliminated player using a Revive Beacon.
+    usage: /revive <player>
+    permission: lifesteal.revive
+    permission-message: "&cYou need a Revive Beacon in hand to do this."
+  lifesteal:
+    description: LifestealCore admin command.
+    usage: /lifesteal <give|sethearts|ban|unban|reload>
+    aliases: [ls, lsc]
+    permission: lifesteal.admin
+    permission-message: "&cYou do not have permission to do that."
+
+permissions:
+  lifesteal.admin:
+    description: Access to all LifestealCore admin subcommands.
+    default: op
+  lifesteal.revive:
+    description: Allows using a Revive Beacon to revive an eliminated player.
+    default: true
+  lifesteal.withdraw:
+    description: Allows withdrawing hearts into items.
+    default: true
+  lifesteal.bypass.elimination:
+    description: Player is never banned/eliminated on reaching 0 hearts (staff safety net).
+    default: op

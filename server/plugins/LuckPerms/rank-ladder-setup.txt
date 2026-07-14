@@ -1,0 +1,67 @@
+# =====================================================
+#  LuckPerms rank ladder bootstrap
+#  Path: run these from console (or in-game as OP) once, after LuckPerms
+#  has generated its default config on first boot. LuckPerms stores ranks in
+#  its own database (default: H2 file under plugins/LuckPerms/luckperms-h2.mv.db),
+#  not in a hand-editable YAML, so the ladder is built with commands.
+#
+#  Usage: paste this whole block into the server console. Every line is a
+#  standalone command; order matters (parents must exist before you set them).
+# =====================================================
+
+# --- Survivor ladder (weight = priority, higher overrides lower) ---
+lp creategroup member
+lp group member setweight 0
+lp group member meta setprefix 100 "&7[Member] &f"
+lp group member meta setsuffix 100 ""
+
+lp creategroup veteran
+lp group veteran setweight 10
+lp group veteran parent add member
+lp group veteran meta setprefix 100 "&f[Veteran] &f"
+lp group veteran meta setmeta max-hearts-bonus 0
+
+lp creategroup elite
+lp group elite setweight 20
+lp group elite parent add veteran
+lp group elite meta setprefix 100 "&b[Elite] &f"
+
+lp creategroup immortal
+lp group immortal setweight 30
+lp group immortal parent add elite
+lp group immortal meta setprefix 100 "&d&l[Immortal] &f"
+# Immortal is the top earned/purchasable rank — pair with a cosmetic-only
+# perk (kit, /hat, colored name) rather than a gameplay advantage to keep
+# PvP balanced. Do NOT give bonus max-hearts here; use the shop/crates
+# heart economy for that instead so buying rank never buys PvP power.
+
+# --- Staff ladder (separate branch, does not inherit survivor cosmetics) ---
+lp creategroup helper
+lp group helper setweight 50
+lp group helper meta setprefix 100 "&9[Helper] &f"
+lp group helper permission set essentials.kick true
+lp group helper permission set essentials.mute true
+lp group helper permission set lifesteal.revive true
+
+lp creategroup moderator
+lp group moderator setweight 60
+lp group moderator parent add helper
+lp group moderator meta setprefix 100 "&2[Mod] &f"
+lp group moderator permission set essentials.ban true
+lp group moderator permission set essentials.tempban true
+lp group moderator permission set worldguard.region.bypass.spawn true
+
+lp creategroup admin
+lp group admin setweight 100
+lp group admin parent add moderator
+lp group admin meta setprefix 100 "&4[Admin] &f"
+lp group admin permission set lifesteal.admin true
+lp group admin permission set lifesteal.bypass.elimination true
+lp group admin permission set * true
+
+# --- Default group is "default" (already exists in LuckPerms) ---
+lp group default meta setprefix 100 "&7[Newblood] &f"
+lp group default setweight -10
+
+# --- Sanity check ---
+lp editor

@@ -1,0 +1,90 @@
+# =====================================================
+#  CrazyCrates — Heart Crate
+#  Path: plugins/CrazyCrates/Crates/heart_crate.yml
+# =====================================================
+
+Crate:
+  Name: "&c&lHeart Crate"
+  Type: Wheel
+  Preview: true
+  MaxMassOpen: 5
+  Hologram:
+    Enabled: true
+    Text:
+      - "&c&lHeart Crate"
+      - "&7Right-click to open!"
+  Prizes:
+    1:
+      DisplayName: "&c&l❤ Heart Fragment"
+      DisplayItem: NETHER_STAR
+      DisplayAmount: 1
+      Weight: 25.0
+      Items:
+        1:
+          Material: NETHER_STAR
+          Amount: 1
+          CustomModelData: 100001
+          Name: "&c&l❤ Heart Fragment"
+          Lore:
+            - "&7Right-click to consume for +1 heart."
+      Messages:
+        - "&c&l❤ &f%player% &7won a &c&lHeart Fragment&7!"
+    2:
+      DisplayName: "&6&l2x Heart Fragments"
+      DisplayItem: NETHER_STAR
+      DisplayAmount: 2
+      Weight: 8.0
+      Items:
+        1:
+          Material: NETHER_STAR
+          Amount: 2
+          CustomModelData: 100001
+          Name: "&c&l❤ Heart Fragment"
+          Lore:
+            - "&7Right-click to consume for +1 heart."
+      Messages:
+        - "&6&l★ &f%player% &7won &6&l2x Heart Fragments&7!"
+    3:
+      DisplayName: "&b&l✦ Revive Beacon"
+      DisplayItem: BEACON
+      DisplayAmount: 1
+      Weight: 1.5
+      Items:
+        1:
+          Material: BEACON
+          Amount: 1
+          CustomModelData: 100002
+          Name: "&b&l✦ Revive Beacon"
+          Lore:
+            - "&7Use /revive <player> to bring back"
+            - "&7an eliminated player."
+      Messages:
+        - "&b&l✦ JACKPOT! &f%player% &7won a &b&lRevive Beacon&7!"
+      Broadcast: true
+    4:
+      DisplayName: "&aGolden Apple x4"
+      DisplayItem: GOLDEN_APPLE
+      DisplayAmount: 4
+      Weight: 20.0
+      Items:
+        1:
+          Material: GOLDEN_APPLE
+          Amount: 4
+    5:
+      DisplayName: "&e$1,000"
+      DisplayItem: SUNFLOWER
+      DisplayAmount: 1
+      Weight: 30.0
+      Commands:
+        - "[CONSOLE] eco give %player% 1000"
+      Messages:
+        - "&e%player% &7won &e$1,000&7!"
+    6:
+      DisplayName: "&7Better luck next time"
+      DisplayItem: COAL
+      DisplayAmount: 1
+      Weight: 15.5
+      Items:
+        1:
+          Material: COAL
+          Amount: 8

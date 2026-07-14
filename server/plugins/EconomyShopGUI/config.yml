@@ -1,0 +1,24 @@
+# =====================================================
+#  EconomyShopGUI (free) — main config
+#  Path: plugins/EconomyShopGUI/config.yml
+#  Plugin: https://www.spigotmc.org/resources/economyshopgui.69927/  (100% free)
+#  Requires: Vault + an economy plugin (EssentialsX included in this pack)
+#  Wiki (verify exact keys against your installed version):
+#    https://wiki.gpplugins.com/economyshopgui/file-configuration/config.yml
+# =====================================================
+
+general:
+  currency-symbol: "$"
+  gui-rows: 6
+  gui-title: "&8&lSMP &c&lShop"
+  sell-all-command-enabled: true
+  sell-all-command: "sellall"
+  confirm-purchases-over: 5000     # ask "are you sure?" above this price — protects new players from misclicks
+  sound-effects: true
+  log-transactions: true
+
+# Custom items (Heart Fragment / Revive Beacon) are sold using plain
+# material + CustomModelData entries — see shops/hearts.yml. LifestealCore
+# recognizes any item with the matching material + custom-model-data as a
+# valid heart item / revive beacon even if EconomyShopGUI constructs it
+# itself, so no command-based purchase hack is required.

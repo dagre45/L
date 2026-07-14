@@ -1,0 +1,91 @@
+# =====================================================
+#  LifestealCore configuration
+#  Path: plugins/LifestealCore/config.yml
+# =====================================================
+
+hearts:
+  # Hearts a brand new player spawns with. 1 heart = 2 HP.
+  starting-hearts: 10
+  # Hard cap — players can never exceed this many hearts (via kills, items, or crates).
+  max-hearts: 20
+  # Hearts transferred from victim -> killer on a PvP kill.
+  hearts-per-kill: 1
+  # If true, dying to mobs/fall/lava/etc. also costs a heart (default off — PvP-only economy).
+  lose-heart-on-natural-death: false
+  # Hearts an eliminated player is restored to when revived.
+  revive-hearts: 10
+  # Players cannot withdraw a heart into an item if it would drop them below this floor.
+  withdraw-min-hearts-remaining: 5
+
+elimination:
+  # TEMPORARY_BAN  -> banned for ban-duration-hours, auto-unban, OR early unban via Revive Beacon
+  # PERMANENT_BAN  -> banned until manually /revive'd, never auto-expires
+  # SPECTATOR      -> not banned, forced into spectator mode until revived (softcore mode)
+  mode: PERMANENT_BAN
+  ban-duration-hours: 72
+  broadcast-elimination: true
+  broadcast-message: "&c☠ &f%player% &7has been &c&lELIMINATED &7by &f%killer%&7! (0 hearts remain)"
+  ban-screen-message: |
+    &c&l☠ YOU HAVE BEEN ELIMINATED ☠
+
+    &7You reached 0 hearts and were removed from the SMP.
+    &7A friend can revive you with a &d&lRevive Beacon&7:
+    &f  /revive %player%
+
+    &8discord.gg/yourserver
+
+items:
+  heart-item:
+    material: NETHER_STAR
+    display-name: "&c&l❤ Heart Fragment"
+    lore:
+      - "&7Right-click to consume."
+      - "&7Permanently grants &c+1 heart&7 (capped at %maxhearts%)."
+      - ""
+      - "&8A piece of a fallen player's life force."
+    custom-model-data: 100001
+    glow: true
+  revive-beacon:
+    material: BEACON
+    display-name: "&b&l✦ Revive Beacon"
+    lore:
+      - "&7Use &f/revive <player> &7while holding this"
+      - "&7to bring an eliminated player back to the SMP."
+      - ""
+      - "&8Consumed on use."
+    custom-model-data: 100002
+    glow: true
+
+recipes:
+  enabled: true
+  heart-item:
+    shape:
+      - "GDG"
+      - "DND"
+      - "GDG"
+    ingredients:
+      G: GOLD_INGOT
+      D: DIAMOND
+      N: NETHER_STAR
+  revive-beacon:
+    shape:
+      - "GEG"
+      - "EHE"
+      - "GEG"
+    ingredients:
+      G: GOLD_BLOCK
+      E: EMERALD_BLOCK
+      H: HEART_ITEM   # special token: consumes one crafted Heart Fragment, not a vanilla item
+
+combat-log:
+  enabled: true
+  timer-seconds: 15
+  punishment: KILL   # KILL (counts as a PvP death -> lose a heart) | BAN (instant elimination-tier ban)
+  broadcast: "&e⚔ %player% &7combat-logged and was punished!"
+
+storage:
+  # YAML is fine for <500 concurrent players. Set to SQLITE for larger networks (see docs/INSTALL.md).
+  type: YAML
+  autosave-interval-minutes: 5
+
+debug: false

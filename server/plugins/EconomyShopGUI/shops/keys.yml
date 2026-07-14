@@ -1,0 +1,29 @@
+# =====================================================
+#  EconomyShopGUI — Crate Keys category
+#  Path: plugins/EconomyShopGUI/shops/keys.yml
+#
+#  Physical crate keys use CrazyCrates' own material + CustomModelData
+#  (see plugins/CrazyCrates/config.yml Physical-Key sections), so a plain
+#  material-based shop entry works for buying/selling them just like the
+#  Heart Fragment/Revive Beacon entries — no command items needed.
+# =====================================================
+
+items:
+  1:
+    material: TRIPWIRE_HOOK
+    customModelData: 100010
+    displayName: "&c&lHeart Crate Key"
+    description:
+      - "&7Right-click the Heart Crate with this key."
+    amount: 1
+    buyPrice: 2500.0
+    sellPrice: -1
+  2:
+    material: TRIPWIRE_HOOK
+    customModelData: 100011
+    displayName: "&b&lGear Crate Key"
+    description:
+      - "&7Right-click the Gear Crate with this key."
+    amount: 1
+    buyPrice: 3000.0
+    sellPrice: -1

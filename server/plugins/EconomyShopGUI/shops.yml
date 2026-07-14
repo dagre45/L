@@ -1,0 +1,31 @@
+# =====================================================
+#  EconomyShopGUI — shop category registry
+#  Path: plugins/EconomyShopGUI/shops.yml
+# =====================================================
+
+shops:
+  hearts:
+    displayName: "&c&l❤ Hearts & Revives"
+    icon: NETHER_STAR
+    slot: 10
+    file: shops/hearts.yml
+  blocks:
+    displayName: "&a&lBlocks & Ores"
+    icon: DIAMOND_ORE
+    slot: 12
+    file: shops/blocks.yml
+  gear:
+    displayName: "&b&lTools & Gear"
+    icon: DIAMOND_SWORD
+    slot: 14
+    file: shops/gear.yml
+  food:
+    displayName: "&6&lFood & Farming"
+    icon: COOKED_BEEF
+    slot: 16
+    file: shops/food.yml
+  keys:
+    displayName: "&d&lCrate Keys"
+    icon: TRIPWIRE_HOOK
+    slot: 18
+    file: shops/keys.yml

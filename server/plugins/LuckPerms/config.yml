@@ -1,0 +1,19 @@
+# =====================================================
+#  LuckPerms — partial config
+#  Path: plugins/LuckPerms/config.yml
+#  NOTE: LuckPerms generates a full default config.yml on first boot with
+#  extensive comments — only change the keys below, leave the rest default.
+# =====================================================
+
+server: lifesteal-smp
+storage-method: h2          # zero-setup flatfile-style DB; switch to mysql if you run a network
+default-assignment:
+  - server: global
+    world: null
+    group: member
+    permission: false
+    add-groups: true
+
+# PlaceholderAPI expansion for LuckPerms is installed automatically the
+# first time it's needed (used by TAB for %luckperms_prefix% and by the
+# scoreboard). No further config required.

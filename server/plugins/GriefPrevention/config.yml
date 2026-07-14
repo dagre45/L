@@ -1,0 +1,38 @@
+# =====================================================
+#  GriefPrevention (free) — partial config
+#  Path: plugins/GriefPrevention/config.yml
+#  Handles: player land claiming outside spawn. WorldGuard (below) handles
+#  the static spawn safe-zone. GriefPrevention generates a large default
+#  config on first boot — only the keys below need to change.
+# =====================================================
+
+GriefPrevention:
+  Claims:
+    # Full-loot PvP SMP: claims stop grief/theft, but PvP still works inside
+    # a claim unless the owner disables it — keeps the "no safe base" tension
+    # some Lifesteal servers want. Set to true instead if you'd rather claims
+    # always be PvP-safe.
+    PvPAllowedInClaims: false
+    PvPAllowedInAdminClaims: false
+
+    # Accrual: players earn claim blocks passively + per playtime, enough for
+    # one modest base without trivial mega-claiming (kill economy is the
+    # server's real reward loop, not land).
+    BlocksAccruedPerHour: 100
+    MaxAccruedBlocks: 60000
+    InitialBlocks: 100
+    ClaimsExtendIntoGroundDistance: 5
+    CreativeRulesEnabled: false
+
+    # Eliminated (banned) players' claims are NOT auto-deleted — a revive
+    # should return them to their base, not a wiped claim.
+    ExpirationDays: -1
+    ChestClaimExpirationDays: -1
+
+    Abandon:
+      ReturnRatio: 1.0
+
+  Spam:
+    Enabled: true
+
+  Claims.AutomaticNewPlayerClaims: false   # players opt in with /claim, teaches the mechanic via /kit starter book

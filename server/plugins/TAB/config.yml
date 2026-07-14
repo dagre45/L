@@ -1,0 +1,61 @@
+# =====================================================
+#  TAB (free) — scoreboard + tablist config
+#  Path: plugins/TAB/config.yml
+#  Plugin: https://github.com/NEZNAMY/TAB (100% free)
+#  Requires: PlaceholderAPI + Vault (for %vault_eco_balance%) + LuckPerms
+#  Full docs: https://github.com/NEZNAMY/TAB/wiki
+# =====================================================
+
+scoreboard:
+  enabled: true
+  toggle-command: /sb
+  remember-toggle-choice: true
+  hidden-by-default: false
+  scoreboards:
+    main:
+      title: "&c&l❤ LIFESTEAL SMP"
+      lines:
+        - "&7"
+        - "&fRank: %luckperms_prefix%"
+        - "&7"
+        - "&c❤ Hearts: &f%lifesteal_hearts%&7/&f%lifesteal_maxhearts%"
+        - "&6⚔ Kills: &f%lifesteal_kills%"
+        - "&8☠ Deaths: &f%lifesteal_deaths%"
+        - "&7"
+        - "&a$ Balance: &f%vault_eco_balance_formatted%"
+        - "&7"
+        - "&fPing: &f%ping%ms"
+        - "&fOnline: &f%online%/%max_players%"
+        - " "
+        - "&ediscord.gg/yourserver"
+
+header-footer:
+  enabled: true
+  header:
+    - "&c&l❤ LIFESTEAL SMP &7- &fSeason 1"
+  footer:
+    - "&7Store: &fyourserver.tebex.io &8| &7Discord: &fdiscord.gg/yourserver"
+
+# Tablist name formatting reads LuckPerms group prefixes directly — no
+# separate groups.yml needed as long as LuckPerms is installed (see
+# plugins/LuckPerms/rank-ladder.md for the prefixes this references).
+tablist-name-formatting:
+  enabled: true
+  # Applies to every player; %luckperms_prefix% resolves per-player from LP.
+  default: "%luckperms_prefix%%player%"
+
+tablist-objective:
+  enabled: true
+  value: "&c❤%lifesteal_hearts%"
+
+belowname:
+  enabled: true
+  text: "&c❤ %lifesteal_hearts% Hearts"
+
+playerlist-objective:
+  enabled: false
+
+nametags:
+  enabled: true
+  # Shows rank prefix + heart count above player heads in the SMP world.
+  format: "%luckperms_prefix%%player% &c❤%lifesteal_hearts%"

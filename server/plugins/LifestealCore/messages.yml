@@ -1,0 +1,49 @@
+# =====================================================
+#  LifestealCore player-facing messages
+#  Path: plugins/LifestealCore/messages.yml
+#  Colors: '&' codes, PlaceholderAPI placeholders resolved where noted.
+# =====================================================
+
+prefix: "&8[&c❤&8] "
+
+hearts:
+  self: "%prefix%&7You have &c%hearts% hearts&7 (max %maxhearts%)."
+  other: "%prefix%&7%target% has &c%hearts% hearts&7 (max %maxhearts%)."
+  gained-kill: "%prefix%&aYou stole a heart from %victim%! &7(%hearts%/%maxhearts%)"
+  lost-kill: "%prefix%&cYou lost a heart to %killer%! &7(%hearts%/%maxhearts%)"
+  at-cap: "%prefix%&eYou are already at the maximum of %maxhearts% hearts."
+
+withdraw:
+  success: "%prefix%&aWithdrew 1 heart into a Heart Fragment. &7(%hearts%/%maxhearts% remaining)"
+  too-low: "%prefix%&cYou need at least %minremaining% hearts remaining after the withdrawal."
+  inventory-full: "%prefix%&cYour inventory is full — make space and try again."
+
+heart-item:
+  consumed: "%prefix%&aConsumed a Heart Fragment! &7(%hearts%/%maxhearts%)"
+  at-cap: "%prefix%&eYou are at the maximum of %maxhearts% hearts — this Heart Fragment was not consumed."
+
+revive:
+  needs-beacon: "%prefix%&cYou need a Revive Beacon in your hand to do that."
+  not-eliminated: "%prefix%&c%target% is not currently eliminated."
+  success-reviver: "%prefix%&aYou revived %target%! They now have %hearts% hearts."
+  success-target: "%prefix%&aYou have been revived by %reviver%! You now have %hearts% hearts."
+  broadcast: "&b✦ &f%target% &7was revived by &f%reviver%&7!"
+  player-not-found: "%prefix%&cThat player has never joined this server."
+
+elimination:
+  banned: "%prefix%&cYou have been eliminated and banned. See the ban screen for revive instructions."
+
+admin:
+  reload-success: "%prefix%&aConfiguration reloaded."
+  gave-item: "%prefix%&aGave %amount%x %item% to %target%."
+  set-hearts: "%prefix%&aSet %target%'s hearts to %hearts%."
+  unbanned: "%prefix%&aManually unbanned and revived %target% with %hearts% hearts."
+  banned-player: "%prefix%&aManually eliminated %target%."
+  invalid-usage: "%prefix%&cUsage: %usage%"
+  player-only: "%prefix%&cThis command can only be used by players."
+  no-permission: "%prefix%&cYou do not have permission to do that."
+
+combat-log:
+  warning: "%prefix%&e⚔ Combat tagged! Do not log out for %seconds%s or you will be punished."
+  cleared: "%prefix%&aYou are no longer combat tagged."
+  punished: "%prefix%&cYou combat logged and were punished!"

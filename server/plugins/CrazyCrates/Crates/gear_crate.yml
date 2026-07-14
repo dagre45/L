@@ -1,0 +1,84 @@
+# Path: plugins/CrazyCrates/Crates/gear_crate.yml
+Crate:
+  Name: "&b&lGear Crate"
+  Type: Wheel
+  Preview: true
+  MaxMassOpen: 5
+  Hologram:
+    Enabled: true
+    Text:
+      - "&b&lGear Crate"
+      - "&7Right-click to open!"
+  Prizes:
+    1:
+      DisplayName: "&bEnchanted Diamond Sword"
+      DisplayItem: DIAMOND_SWORD
+      DisplayAmount: 1
+      Weight: 15.0
+      Items:
+        1:
+          Material: DIAMOND_SWORD
+          Amount: 1
+          Enchantments:
+            SHARPNESS: 4
+            UNBREAKING: 3
+    2:
+      DisplayName: "&bEnchanted Diamond Armor Set"
+      DisplayItem: DIAMOND_CHESTPLATE
+      DisplayAmount: 1
+      Weight: 10.0
+      Items:
+        1:
+          Material: DIAMOND_HELMET
+          Amount: 1
+          Enchantments: { PROTECTION: 3 }
+        2:
+          Material: DIAMOND_CHESTPLATE
+          Amount: 1
+          Enchantments: { PROTECTION: 3 }
+        3:
+          Material: DIAMOND_LEGGINGS
+          Amount: 1
+          Enchantments: { PROTECTION: 3 }
+        4:
+          Material: DIAMOND_BOOTS
+          Amount: 1
+          Enchantments: { PROTECTION: 3, FEATHER_FALLING: 4 }
+    3:
+      DisplayName: "&6Totem of Undying"
+      DisplayItem: TOTEM_OF_UNDYING
+      DisplayAmount: 1
+      Weight: 5.0
+      Items:
+        1:
+          Material: TOTEM_OF_UNDYING
+          Amount: 1
+      Broadcast: true
+    4:
+      DisplayName: "&aNetherite Upgrade Smithing Template + Ingot"
+      DisplayItem: NETHERITE_INGOT
+      DisplayAmount: 1
+      Weight: 8.0
+      Items:
+        1:
+          Material: NETHERITE_INGOT
+          Amount: 1
+        2:
+          Material: NETHERITE_UPGRADE_SMITHING_TEMPLATE
+          Amount: 1
+    5:
+      DisplayName: "&e$500"
+      DisplayItem: SUNFLOWER
+      DisplayAmount: 1
+      Weight: 40.0
+      Commands:
+        - "[CONSOLE] eco give %player% 500"
+    6:
+      DisplayName: "&7Arrows x32"
+      DisplayItem: ARROW
+      DisplayAmount: 32
+      Weight: 22.0
+      Items:
+        1:
+          Material: ARROW
+          Amount: 32
